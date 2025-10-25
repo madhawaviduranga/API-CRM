@@ -1,0 +1,90 @@
+
+# API Endpoints
+
+## Auth Routes
+- **`POST /api/auth/login`**: Authenticates a user and returns a JWT token for accessing protected routes.
+
+## Customer Routes
+- **`GET /api/customers`**: Retrieves a paginated list of all customers.
+- **`GET /api/customers/:id`**: Retrieves a single customer by their unique ID.
+- **`POST /api/customers`**: Creates a new customer record.
+- **`PUT /api/customers/:id`**: Updates an existing customer's information.
+- **`DELETE /api/customers/:id`**: Deletes a customer from the database.
+
+## Invoice Routes
+- **`GET /api/invoices`**: Retrieves a list of all invoices. Requires 'read_invoice' permission.
+- **`GET /api/invoices/:id`**: Retrieves a single invoice by its ID. Requires 'read_invoice' permission.
+- **`POST /api/invoices`**: Creates a new invoice. Requires 'create_invoice' permission.
+- **`PUT /api/invoices/:id`**: Updates an existing invoice. Requires 'update_invoice' permission.
+- **`DELETE /api/invoices/:id`**: Deletes an invoice. Requires 'delete_invoice' permission.
+
+## Cheque Payment Routes
+- **`GET /api/cheque-payments`**: Retrieves a list of all cheque payments.
+- **`GET /api/cheque-payments/:id`**: Retrieves a single cheque payment by its ID.
+- **`POST /api/cheque-payments`**: Creates a new cheque payment record.
+- **`PUT /api/cheque-payments/:id`**: Updates an existing cheque payment.
+- **`DELETE /api/cheque-payments/:id`**: Deletes a cheque payment.
+
+## Return Routes
+- **`GET /api/returns`**: Retrieves a list of all product returns.
+- **`GET /api/returns/:id`**: Retrieves a single return by its ID.
+- **`POST /api/returns`**: Creates a new return record.
+- **`PUT /api/returns/:id`**: Updates an existing return.
+- **`DELETE /api/returns/:id`**: Deletes a return.
+
+## Product Routes
+- **`GET /api/products`**: Retrieves a list of all products.
+- **`GET /api/products/:id`**: Retrieves a single product by its ID.
+- **`POST /api/products`**: Creates a new product.
+- **`PUT /api/products/:id`**: Updates an existing product.
+- **`DELETE /api/products/:id`**: Deletes a product.
+
+## User Routes
+- **`GET /api/users`**: Retrieves a list of all users.
+- **`GET /api/users/:id`**: Retrieves a single user by their ID.
+- **`POST /api/users`**: Creates a new user.
+- **`PUT /api/users/:id`**: Updates an existing user.
+- **`DELETE /api/users/:id`**: Deletes a user.
+
+## Role Routes
+- **`GET /api/roles`**: Retrieves a list of all user roles.
+- **`GET /api/roles/:id`**: Retrieves a single role by its ID.
+- **`POST /api/roles`**: Creates a new user role.
+- **`PUT /api/roles/:id`**: Updates an existing role.
+- **`DELETE /api/roles/:id`**: Deletes a role.
+
+## Permission Routes
+- **`GET /api/permissions`**: Retrieves a list of all available permissions.
+- **`GET /api/permissions/:id`**: Retrieves a single permission by its ID.
+- **`POST /api/permissions`**: Creates a new permission.
+- **`PUT /api/permissions/:id`**: Updates an existing permission.
+- **`DELETE /api/permissions/:id`**: Deletes a permission.
+
+## Role-Permission Routes
+- **`GET /api/role-permissions`**: Retrieves all associations between roles and permissions.
+- **`GET /api/role-permissions/:id`**: Retrieves a single role-permission link by its ID.
+- **`POST /api/role-permissions`**: Assigns a permission to a role.
+- **`PUT /api/role-permissions/:id`**: Updates an existing role-permission link.
+- **`DELETE /api/role-permissions/:id`**: Revokes a permission from a role.
+
+## Reports Routes
+- **`GET /api/reports/status-overview`**: Provides an overview of invoice statuses (e.g., paid, pending, overdue).
+- **`GET /api/reports/outstanding-summary`**: Summarizes the total outstanding amounts from unpaid invoices.
+- **`GET /api/reports/revenue-by-area`**: Generates a report of revenue organized by geographical area.
+- **`GET /api/reports/invoice-overdue-analysis`**: Provides a detailed analysis of overdue invoices.
+- **`GET /api/reports/payment-methods`**: Shows a breakdown of which payment methods are most frequently used.
+- **`GET /api/reports/sales-trend`**: Analyzes sales trends over a specified period.
+- **`GET /api/reports/daily-sales`**: Retrieves a report of total sales for the current day.
+- **`GET /api/reports/monthly-sales`**: Retrieves a report of total sales for the current month.
+- **`GET /api/reports/top-customers`**: Lists the top customers by total revenue generated.
+- **`GET /api/reports/customer-credit-summary`**: Provides a summary of the credit status of all customers.
+- **`GET /api/reports/reliability-distribution`**: Shows the distribution of customer reliability scores.
+- **`GET /api/reports/cheque-status-overview`**: Gives an overview of the status of all cheques (e.g., cleared, bounced, pending).
+- **`GET /api/reports/bounced-cheques`**: Retrieves a list of all cheques that have bounced.
+- **`GET /api/reports/bounced-cheque-invoices`**: Lists all invoices associated with bounced cheques.
+- **`GET /api/reports/on-hand-cheques`**: Retrieves a list of all cheques currently on hand.
+
+## Dashboard Routes
+- **`GET /api/dashboard/daily-summary`**: Retrieves a summary of key metrics for a specific day.
+- **`GET /api/dashboard/monthly-summary`**: Retrieves a summary of key metrics for a specific month.
+- **`GET /api/dashboard/annual-summary`**: Retrieves a summary of key metrics for a specific year.
