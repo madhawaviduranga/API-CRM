@@ -1,4 +1,20 @@
-import 'dotenv/config';
+import dotenv from 'dotenv';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+// Explicitly load .env file
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const result = dotenv.config({ path: path.resolve(__dirname, './.env') });
+
+// --- Start Debugging ---
+console.log('Dotenv config result:', result);
+if (result.error) {
+  console.error('Error loading .env file', result.error);
+}
+console.log('JWT_EXPIRES_IN from process.env:', process.env.JWT_EXPIRES_IN);
+// --- End Debugging ---
+
 import express from 'express';
 import helmet from 'helmet';
 import compression from 'compression';
