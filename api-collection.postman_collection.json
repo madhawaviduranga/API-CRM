@@ -16,22 +16,12 @@
                         "body": {
                             "mode": "raw",
                             "raw": "{\n    \"email\": \"admin@example.com\",\n    \"password\": \"password123\"\n}",
-                            "options": {
-                                "raw": {
-                                    "language": "json"
-                                }
-                            }
+                            "options": { "raw": { "language": "json" } }
                         },
                         "url": {
-                            "raw": "{{baseUrl}}/api/auth/login",
-                            "host": [
-                                "{{baseUrl}}"
-                            ],
-                            "path": [
-                                "api",
-                                "auth",
-                                "login"
-                            ]
+                            "raw": "{{baseUrl}}/auth/login",
+                            "host": [ "{{baseUrl}}" ],
+                            "path": [ "auth", "login" ]
                         }
                     },
                     "response": []
@@ -43,20 +33,12 @@
             "item": [
                 {
                     "name": "Get All Users",
-                    "request": {
-                        "method": "GET",
-                        "header": [],
-                        "url": {
-                            "raw": "{{baseUrl}}/api/users",
-                            "host": [
-                                "{{baseUrl}}"
-                            ],
-                            "path": [
-                                "api",
-                                "users"
-                            ]
-                        }
-                    },
+                    "request": { "method": "GET", "header": [], "url": { "raw": "{{baseUrl}}/users", "host": [ "{{baseUrl}}" ], "path": [ "users" ] } },
+                    "response": []
+                },
+                {
+                    "name": "Get User by ID",
+                    "request": { "method": "GET", "header": [], "url": { "raw": "{{baseUrl}}/users/1", "host": [ "{{baseUrl}}" ], "path": [ "users", "1" ] } },
                     "response": []
                 },
                 {
@@ -64,26 +46,24 @@
                     "request": {
                         "method": "POST",
                         "header": [],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\n    \"name\": \"Test User\",\n    \"email\": \"test@example.com\",\n    \"role\": \"user\"\n}",
-                            "options": {
-                                "raw": {
-                                    "language": "json"
-                                }
-                            }
-                        },
-                        "url": {
-                            "raw": "{{baseUrl}}/api/users",
-                            "host": [
-                                "{{baseUrl}}"
-                            ],
-                            "path": [
-                                "api",
-                                "users"
-                            ]
-                        }
+                        "body": { "mode": "raw", "raw": "{\n    \"name\": \"Test User\",\n    \"email\": \"test@example.com\",\n    \"role\": \"user\"\n}", "options": { "raw": { "language": "json" } } },
+                        "url": { "raw": "{{baseUrl}}/users", "host": [ "{{baseUrl}}" ], "path": [ "users" ] }
                     },
+                    "response": []
+                },
+                {
+                    "name": "Update User",
+                    "request": {
+                        "method": "PUT",
+                        "header": [],
+                        "body": { "mode": "raw", "raw": "{\n    \"name\": \"Updated User\"\n}", "options": { "raw": { "language": "json" } } },
+                        "url": { "raw": "{{baseUrl}}/users/1", "host": [ "{{baseUrl}}" ], "path": [ "users", "1" ] }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete User",
+                    "request": { "method": "DELETE", "header": [], "url": { "raw": "{{baseUrl}}/users/1", "host": [ "{{baseUrl}}" ], "path": [ "users", "1" ] } },
                     "response": []
                 }
             ]
@@ -93,20 +73,12 @@
             "item": [
                 {
                     "name": "Get All Products",
-                    "request": {
-                        "method": "GET",
-                        "header": [],
-                        "url": {
-                            "raw": "{{baseUrl}}/api/products",
-                            "host": [
-                                "{{baseUrl}}"
-                            ],
-                            "path": [
-                                "api",
-                                "products"
-                            ]
-                        }
-                    },
+                    "request": { "method": "GET", "header": [], "url": { "raw": "{{baseUrl}}/products", "host": [ "{{baseUrl}}" ], "path": [ "products" ] } },
+                    "response": []
+                },
+                {
+                    "name": "Get Product by ID",
+                    "request": { "method": "GET", "header": [], "url": { "raw": "{{baseUrl}}/products/1", "host": [ "{{baseUrl}}" ], "path": [ "products", "1" ] } },
                     "response": []
                 },
                 {
@@ -114,35 +86,145 @@
                     "request": {
                         "method": "POST",
                         "header": [],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\n    \"name\": \"New Product\",\n    \"price\": 10.99\n}",
-                            "options": {
-                                "raw": {
-                                    "language": "json"
-                                }
-                            }
-                        },
-                        "url": {
-                            "raw": "{{baseUrl}}/api/products",
-                            "host": [
-                                "{{baseUrl}}"
-                            ],
-                            "path": [
-                                "api",
-                                "products"
-                            ]
-                        }
+                        "body": { "mode": "raw", "raw": "{\n    \"name\": \"New Product\",\n    \"price\": 10.99\n}", "options": { "raw": { "language": "json" } } },
+                        "url": { "raw": "{{baseUrl}}/products", "host": [ "{{baseUrl}}" ], "path": [ "products" ] }
                     },
                     "response": []
+                },
+                {
+                    "name": "Update Product",
+                    "request": {
+                        "method": "PUT",
+                        "header": [],
+                        "body": { "mode": "raw", "raw": "{\n    \"price\": 12.99\n}", "options": { "raw": { "language": "json" } } },
+                        "url": { "raw": "{{baseUrl}}/products/1", "host": [ "{{baseUrl}}" ], "path": [ "products", "1" ] }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete Product",
+                    "request": { "method": "DELETE", "header": [], "url": { "raw": "{{baseUrl}}/products/1", "host": [ "{{baseUrl}}" ], "path": [ "products", "1" ] } },
+                    "response": []
                 }
+            ]
+        },
+        {
+            "name": "Areas",
+            "item": [
+                { "name": "Get All Areas", "request": { "method": "GET", "header": [], "url": { "raw": "{{baseUrl}}/areas", "host": [ "{{baseUrl}}" ], "path": [ "areas" ] } } },
+                { "name": "Get Area by ID", "request": { "method": "GET", "header": [], "url": { "raw": "{{baseUrl}}/areas/1", "host": [ "{{baseUrl}}" ], "path": [ "areas", "1" ] } } },
+                { "name": "Create Area", "request": { "method": "POST", "header": [], "body": { "mode": "raw", "raw": "{\n    \"name\": \"New Area\"\n}" }, "url": { "raw": "{{baseUrl}}/areas", "host": [ "{{baseUrl}}" ], "path": [ "areas" ] } } },
+                { "name": "Update Area", "request": { "method": "PUT", "header": [], "body": { "mode": "raw", "raw": "{\n    \"name\": \"Updated Area\"\n}" }, "url": { "raw": "{{baseUrl}}/areas/1", "host": [ "{{baseUrl}}" ], "path": [ "areas", "1" ] } } },
+                { "name": "Delete Area", "request": { "method": "DELETE", "header": [], "url": { "raw": "{{baseUrl}}/areas/1", "host": [ "{{baseUrl}}" ], "path": [ "areas", "1" ] } } }
+            ]
+        },
+        {
+            "name": "Cheque Payments",
+            "item": [
+                { "name": "Get All Cheque Payments", "request": { "method": "GET", "header": [], "url": { "raw": "{{baseUrl}}/cheque-payments", "host": [ "{{baseUrl}}" ], "path": [ "cheque-payments" ] } } },
+                { "name": "Get Cheque Payment by ID", "request": { "method": "GET", "header": [], "url": { "raw": "{{baseUrl}}/cheque-payments/1", "host": [ "{{baseUrl}}" ], "path": [ "cheque-payments", "1" ] } } },
+                { "name": "Create Cheque Payment", "request": { "method": "POST", "header": [], "body": { "mode": "raw", "raw": "{\n    \"amount\": 100\n}" }, "url": { "raw": "{{baseUrl}}/cheque-payments", "host": [ "{{baseUrl}}" ], "path": [ "cheque-payments" ] } } },
+                { "name": "Update Cheque Payment", "request": { "method": "PUT", "header": [], "body": { "mode": "raw", "raw": "{\n    \"amount\": 150\n}" }, "url": { "raw": "{{baseUrl}}/cheque-payments/1", "host": [ "{{baseUrl}}" ], "path": [ "cheque-payments", "1" ] } } },
+                { "name": "Delete Cheque Payment", "request": { "method": "DELETE", "header": [], "url": { "raw": "{{baseUrl}}/cheque-payments/1", "host": [ "{{baseUrl}}" ], "path": [ "cheque-payments", "1" ] } } }
+            ]
+        },
+        {
+            "name": "Customers",
+            "item": [
+                { "name": "Get All Customers", "request": { "method": "GET", "header": [], "url": { "raw": "{{baseUrl}}/customers", "host": [ "{{baseUrl}}" ], "path": [ "customers" ] } } },
+                { "name": "Get Customer by ID", "request": { "method": "GET", "header": [], "url": { "raw": "{{baseUrl}}/customers/1", "host": [ "{{baseUrl}}" ], "path": [ "customers", "1" ] } } },
+                { "name": "Create Customer", "request": { "method": "POST", "header": [], "body": { "mode": "raw", "raw": "{\n    \"name\": \"New Customer\"\n}" }, "url": { "raw": "{{baseUrl}}/customers", "host": [ "{{baseUrl}}" ], "path": [ "customers" ] } } },
+                { "name": "Update Customer", "request": { "method": "PUT", "header": [], "body": { "mode": "raw", "raw": "{\n    \"name\": \"Updated Customer\"\n}" }, "url": { "raw": "{{baseUrl}}/customers/1", "host": [ "{{baseUrl}}" ], "path": [ "customers", "1" ] } } },
+                { "name": "Delete Customer", "request": { "method": "DELETE", "header": [], "url": { "raw": "{{baseUrl}}/customers/1", "host": [ "{{baseUrl}}" ], "path": [ "customers", "1" ] } } }
+            ]
+        },
+        {
+            "name": "Dashboard",
+            "item": [
+                { "name": "Get Dashboard Data", "request": { "method": "GET", "header": [], "url": { "raw": "{{baseUrl}}/dashboard", "host": [ "{{baseUrl}}" ], "path": [ "dashboard" ] } } }
+            ]
+        },
+        {
+            "name": "Distributors",
+            "item": [
+                { "name": "Get All Distributors", "request": { "method": "GET", "header": [], "url": { "raw": "{{baseUrl}}/distributors", "host": [ "{{baseUrl}}" ], "path": [ "distributors" ] } } },
+                { "name": "Get Distributor by ID", "request": { "method": "GET", "header": [], "url": { "raw": "{{baseUrl}}/distributors/1", "host": [ "{{baseUrl}}" ], "path": [ "distributors", "1" ] } } },
+                { "name": "Create Distributor", "request": { "method": "POST", "header": [], "body": { "mode": "raw", "raw": "{\n    \"name\": \"New Distributor\"\n}" }, "url": { "raw": "{{baseUrl}}/distributors", "host": [ "{{baseUrl}}" ], "path": [ "distributors" ] } } },
+                { "name": "Update Distributor", "request": { "method": "PUT", "header": [], "body": { "mode": "raw", "raw": "{\n    \"name\": \"Updated Distributor\"\n}" }, "url": { "raw": "{{baseUrl}}/distributors/1", "host": [ "{{baseUrl}}" ], "path": [ "distributors", "1" ] } } },
+                { "name": "Delete Distributor", "request": { "method": "DELETE", "header": [], "url": { "raw": "{{baseUrl}}/distributors/1", "host": [ "{{baseUrl}}" ], "path": [ "distributors", "1" ] } } }
+            ]
+        },
+        {
+            "name": "Invoices",
+            "item": [
+                { "name": "Get All Invoices", "request": { "method": "GET", "header": [], "url": { "raw": "{{baseUrl}}/invoices", "host": [ "{{baseUrl}}" ], "path": [ "invoices" ] } } },
+                { "name": "Get Invoice by ID", "request": { "method": "GET", "header": [], "url": { "raw": "{{baseUrl}}/invoices/1", "host": [ "{{baseUrl}}" ], "path": [ "invoices", "1" ] } } },
+                { "name": "Create Invoice", "request": { "method": "POST", "header": [], "body": { "mode": "raw", "raw": "{\n    \"amount\": 200\n}" }, "url": { "raw": "{{baseUrl}}/invoices", "host": [ "{{baseUrl}}" ], "path": [ "invoices" ] } } },
+                { "name": "Update Invoice", "request": { "method": "PUT", "header": [], "body": { "mode": "raw", "raw": "{\n    \"amount\": 250\n}" }, "url": { "raw": "{{baseUrl}}/invoices/1", "host": [ "{{baseUrl}}" ], "path": [ "invoices", "1" ] } } },
+                { "name": "Delete Invoice", "request": { "method": "DELETE", "header": [], "url": { "raw": "{{baseUrl}}/invoices/1", "host": [ "{{baseUrl}}" ], "path": [ "invoices", "1" ] } } }
+            ]
+        },
+        {
+            "name": "Permissions",
+            "item": [
+                { "name": "Get All Permissions", "request": { "method": "GET", "header": [], "url": { "raw": "{{baseUrl}}/permissions", "host": [ "{{baseUrl}}" ], "path": [ "permissions" ] } } },
+                { "name": "Get Permission by ID", "request": { "method": "GET", "header": [], "url": { "raw": "{{baseUrl}}/permissions/1", "host": [ "{{baseUrl}}" ], "path": [ "permissions", "1" ] } } },
+                { "name": "Create Permission", "request": { "method": "POST", "header": [], "body": { "mode": "raw", "raw": "{\n    \"name\": \"new-permission\"\n}" }, "url": { "raw": "{{baseUrl}}/permissions", "host": [ "{{baseUrl}}" ], "path": [ "permissions" ] } } },
+                { "name": "Update Permission", "request": { "method": "PUT", "header": [], "body": { "mode": "raw", "raw": "{\n    \"name\": \"updated-permission\"\n}" }, "url": { "raw": "{{baseUrl}}/permissions/1", "host": [ "{{baseUrl}}" ], "path": [ "permissions", "1" ] } } },
+                { "name": "Delete Permission", "request": { "method": "DELETE", "header": [], "url": { "raw": "{{baseUrl}}/permissions/1", "host": [ "{{baseUrl}}" ], "path": [ "permissions", "1" ] } } }
+            ]
+        },
+        {
+            "name": "Reports",
+            "item": [
+                { "name": "Get Reports", "request": { "method": "GET", "header": [], "url": { "raw": "{{baseUrl}}/reports", "host": [ "{{baseUrl}}" ], "path": [ "reports" ] } } }
+            ]
+        },
+        {
+            "name": "Returns",
+            "item": [
+                { "name": "Get All Returns", "request": { "method": "GET", "header": [], "url": { "raw": "{{baseUrl}}/returns", "host": [ "{{baseUrl}}" ], "path": [ "returns" ] } } },
+                { "name": "Get Return by ID", "request": { "method": "GET", "header": [], "url": { "raw": "{{baseUrl}}/returns/1", "host": [ "{{baseUrl}}" ], "path": [ "returns", "1" ] } } },
+                { "name": "Create Return", "request": { "method": "POST", "header": [], "body": { "mode": "raw", "raw": "{\n    \"reason\": \"damaged\"\n}" }, "url": { "raw": "{{baseUrl}}/returns", "host": [ "{{baseUrl}}" ], "path": [ "returns" ] } } },
+                { "name": "Update Return", "request": { "method": "PUT", "header": [], "body": { "mode": "raw", "raw": "{\n    \"reason\": \"wrong item\"\n}" }, "url": { "raw": "{{baseUrl}}/returns/1", "host": [ "{{baseUrl}}" ], "path": [ "returns", "1" ] } } },
+                { "name": "Delete Return", "request": { "method": "DELETE", "header": [], "url": { "raw": "{{baseUrl}}/returns/1", "host": [ "{{baseUrl}}" ], "path": [ "returns", "1" ] } } }
+            ]
+        },
+        {
+            "name": "Role Permissions",
+            "item": [
+                { "name": "Get All Role Permissions", "request": { "method": "GET", "header": [], "url": { "raw": "{{baseUrl}}/role-permissions", "host": [ "{{baseUrl}}" ], "path": [ "role-permissions" ] } } },
+                { "name": "Get Role Permission by ID", "request": { "method": "GET", "header": [], "url": { "raw": "{{baseUrl}}/role-permissions/1", "host": [ "{{baseUrl}}" ], "path": [ "role-permissions", "1" ] } } },
+                { "name": "Create Role Permission", "request": { "method": "POST", "header": [], "body": { "mode": "raw", "raw": "{}" }, "url": { "raw": "{{baseUrl}}/role-permissions", "host": [ "{{baseUrl}}" ], "path": [ "role-permissions" ] } } },
+                { "name": "Update Role Permission", "request": { "method": "PUT", "header": [], "body": { "mode": "raw", "raw": "{}" }, "url": { "raw": "{{baseUrl}}/role-permissions/1", "host": [ "{{baseUrl}}" ], "path": [ "role-permissions", "1" ] } } },
+                { "name": "Delete Role Permission", "request": { "method": "DELETE", "header": [], "url": { "raw": "{{baseUrl}}/role-permissions/1", "host": [ "{{baseUrl}}" ], "path": [ "role-permissions", "1" ] } } }
+            ]
+        },
+        {
+            "name": "Roles",
+            "item": [
+                { "name": "Get All Roles", "request": { "method": "GET", "header": [], "url": { "raw": "{{baseUrl}}/roles", "host": [ "{{baseUrl}}" ], "path": [ "roles" ] } } },
+                { "name": "Get Role by ID", "request": { "method": "GET", "header": [], "url": { "raw": "{{baseUrl}}/roles/1", "host": [ "{{baseUrl}}" ], "path": [ "roles", "1" ] } } },
+                { "name": "Create Role", "request": { "method": "POST", "header": [], "body": { "mode": "raw", "raw": "{\n    \"name\": \"new-role\"\n}" }, "url": { "raw": "{{baseUrl}}/roles", "host": [ "{{baseUrl}}" ], "path": [ "roles" ] } } },
+                { "name": "Update Role", "request": { "method": "PUT", "header": [], "body": { "mode": "raw", "raw": "{\n    \"name\": \"updated-role\"\n}" }, "url": { "raw": "{{baseUrl}}/roles/1", "host": [ "{{baseUrl}}" ], "path": [ "roles", "1" ] } } },
+                { "name": "Delete Role", "request": { "method": "DELETE", "header": [], "url": { "raw": "{{baseUrl}}/roles/1", "host": [ "{{baseUrl}}" ], "path": [ "roles", "1" ] } } }
+            ]
+        },
+        {
+            "name": "Sales",
+            "item": [
+                { "name": "Get All Sales", "request": { "method": "GET", "header": [], "url": { "raw": "{{baseUrl}}/sales", "host": [ "{{baseUrl}}" ], "path": [ "sales" ] } } },
+                { "name": "Get Sale by ID", "request": { "method": "GET", "header": [], "url": { "raw": "{{baseUrl}}/sales/1", "host": [ "{{baseUrl}}" ], "path": [ "sales", "1" ] } } },
+                { "name": "Create Sale", "request": { "method": "POST", "header": [], "body": { "mode": "raw", "raw": "{\n    \"amount\": 50\n}" }, "url": { "raw": "{{baseUrl}}/sales", "host": [ "{{baseUrl}}" ], "path": [ "sales" ] } } },
+                { "name": "Update Sale", "request": { "method": "PUT", "header": [], "body": { "mode": "raw", "raw": "{\n    \"amount\": 75\n}" }, "url": { "raw": "{{baseUrl}}/sales/1", "host": [ "{{baseUrl}}" ], "path": [ "sales", "1" ] } } },
+                { "name": "Delete Sale", "request": { "method": "DELETE", "header": [], "url": { "raw": "{{baseUrl}}/sales/1", "host": [ "{{baseUrl}}" ], "path": [ "sales", "1" ] } } }
             ]
         }
     ],
     "variable": [
         {
             "key": "baseUrl",
-            "value": "http://localhost:3000"
+            "value": "http://localhost:8080"
         }
     ]
 }
